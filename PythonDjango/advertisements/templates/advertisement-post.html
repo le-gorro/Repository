@@ -49,45 +49,14 @@
     </div>
 </div>
 <div class="container">
-    <form method="post">
-        <div class="row mb-3">
-            <div class="col">
-                <label class="col-sm-4 col-form-label offset-4">Title</label>
-                <div class="col-sm-4 offset-4 w-25">
-                    <input type="text" class="form-control form-control-lg">
-                </div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label class="col-sm-4 col-form-label offset-4">Description</label>
-                <div class="col-sm-4 offset-4 w-25">
-                    <label for="" class="form-label"></label>
-                    <textarea class="form-control" name="" id="" rows="3"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label class="col-sm-4 col-form-label offset-4">Photo</label>
-                <div class="col-sm-4 offset-4 w-25">
-                    <input type="file" class="form-control form-control-lg">
-                </div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label class="col-sm-4 col-form-label offset-4">Price</label>
-                <div class="col-sm-4 offset-4 w-25">
-                    <input type="text" class="form-control form-control-lg">
-                </div>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <div class="offset-4 w-25">
-                    <input type="checkbox" class="form-check-input">
-                    <label class="form-check-label">Auction</label>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row" style="margin: 50px;">
+            <div class="p-3 rounded-2" style="border: 10px var(--bs-primary-border-subtle) solid">
+                <div class="p-3 rounded-2" style="background-color: var(--bs-primary-bg-subtle)">
+                    <div class="p-3 bd-blue-800">
+                        {{ form.as_p }}
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,4 +66,5 @@
             </div>
         </div>
     </form>
+</div>
 {% endblock %}

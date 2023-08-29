@@ -16,7 +16,7 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import index, top_sellers, advertisement_post, register, login, profile
+from .views import index, top_sellers, advertisement_post, register, login, profile, error
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -26,7 +26,8 @@ urlpatterns = [
     path('advertisement-post', advertisement_post, name='advertisement-post'),
     path('register', register, name='register'),
     path('login', login, name='login'),
-    path('profile', profile, name='profile')
+    path('profile', profile, name='profile'),
+    path('error', error, name='error'),
 ]
 
 if settings.DEBUG:
